@@ -1,11 +1,13 @@
 #include<malloc.h>
 #include<math.h>
 /*	Author : Pankaj Mondal
-	Date: SunDay, July 21, 2024, 2:49 PM	
+	Date: SunDay, July 21, 2024, 2:49 PM
+    Date: FriDay, July 26, 2024, 1:49 PM
 	LinkedIn : https://www.linkedin.com/in/buroush
 	GitHub   : https://github.com/Buroush
 	LeetCode : https://leetcode.com/Buroush        		*/
-double root_mean_square_error(double* intercept_and_slopes, int* x, int* y, int size){
+
+double Residual_Sum_of_Squares(double* intercept_and_slopes, int* x, int* y, int size){
 	int i;
 	// printf("\tx\ty\ty'\t\terror \n");
 	double error = 0, temporary_veriable;
@@ -14,7 +16,12 @@ double root_mean_square_error(double* intercept_and_slopes, int* x, int* y, int 
 		// printf("\t%d \t%d\t%f\t%f\n", x[i], y[i], (intercept_and_slopes[0] + ( intercept_and_slopes[1] * x[i] )), temporary_veriable);
 		error += temporary_veriable * temporary_veriable;
 	}
-	return sqrt(error/size);
+    printf("RSS is %d\n", error);
+    printf("R^2 is %d\n", 1-error);
+	return error;
+}
+double root_mean_square_error(double* intercept_and_slopes, int* x, int* y, int size){
+	return sqrt( Residual_Sum_of_Squares(intercept_and_slopes, x, y, size)/size);
 }
 double* Intercept_Slop(int* x, int* y, int size){
 	int i = 0;
