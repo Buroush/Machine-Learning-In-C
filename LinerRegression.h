@@ -2,7 +2,7 @@
 #include<math.h>
 /*	Author : Pankaj Mondal
 	Date: SunDay, July 21, 2024, 2:49 PM
-    Date: FriDay, July 26, 2024, 1:49 PM
+        Date: FriDay, July 26, 2024, 1:49 PM
 	LinkedIn : https://www.linkedin.com/in/buroush
 	GitHub   : https://github.com/Buroush
 	LeetCode : https://leetcode.com/Buroush        		*/
